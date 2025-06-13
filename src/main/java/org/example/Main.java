@@ -6,7 +6,12 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
-        System.out.println(greaterThanHundred());
+//        System.out.println(greaterThanHundred());
+        try{
+            validateException("werio");
+        } catch (Exception ex){
+            System.out.println(ex.getMessage());
+        }
     }
 
 //    Given a Map<String, Integer>, print all keys that have values greater than 100.
@@ -26,6 +31,12 @@ public class Main {
         }
 
         return resultM;
+    }
+
+    static void validateException(String email) throws InvalidEmailException {
+        if (!email.contains("@")){
+            throw new InvalidEmailException("invalid email");
+        }
     }
 
 }
