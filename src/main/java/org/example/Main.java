@@ -12,6 +12,8 @@ public class Main {
         } catch (Exception ex){
             System.out.println(ex.getMessage());
         }
+
+        System.out.println(secondHighest());
     }
 
 //    Given a Map<String, Integer>, print all keys that have values greater than 100.
@@ -39,4 +41,17 @@ public class Main {
         }
     }
 
+    static Integer secondHighest(){
+        List<Employee> employeeList=Arrays.asList(
+                new Employee("qw", 12),
+                new Employee("er", 34),
+                new Employee("ty", 34),
+                new Employee("ui", 56),
+                new Employee("op", 78),
+                new Employee("as", 90)
+        );
+
+        List<Integer> collect = employeeList.stream().map(Employee::getSal).sorted(Comparator.reverseOrder()).limit(2).collect(Collectors.toList());
+        return collect.get(1);
+    }
 }
