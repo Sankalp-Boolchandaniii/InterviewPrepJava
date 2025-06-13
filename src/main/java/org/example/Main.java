@@ -18,7 +18,8 @@ public class Main {
 //        sortByLength();
 //        longestWord();
 //        missigNumber(new int[]{1, 2, 4, 5, 6});
-        fizzBuzz();
+//        fizzBuzz();
+        highestSal();
     }
 
 //    Given a Map<String, Integer>, print all keys that have values greater than 100.
@@ -127,5 +128,19 @@ public class Main {
             }
         }
         System.out.println(stringList);
+    }
+
+    static void highestSal(){
+        List<Employee> employees = Arrays.asList(
+                new Employee("Alice", 82000),
+                new Employee("Bob", 55000),
+                new Employee("Charlie", 68000),
+                new Employee("Diana", 82000),
+                new Employee("Ethan", 47000)
+        );
+//        employees.sort(Comparator.comparing(Employee::getSal).reversed().thenComparing(Employee::getName));
+//        employees.forEach(x-> System.out.println(x.getName()+": "+x.getSal()));
+        List<Employee> list = employees.stream().sorted(Comparator.comparing(Employee::getSal).reversed().thenComparing(Employee::getName)).toList();
+        list.forEach(x-> System.out.println(x.getName()+": "+x.getSal()));
     }
 }
