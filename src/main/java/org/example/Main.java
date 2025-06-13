@@ -17,7 +17,8 @@ public class Main {
 //        System.out.println(anagram("racecas", "carrace"));
 //        sortByLength();
 //        longestWord();
-        missigNumber(new int[]{1, 2, 4, 5, 6});
+//        missigNumber(new int[]{1, 2, 4, 5, 6});
+        fizzBuzz();
     }
 
 //    Given a Map<String, Integer>, print all keys that have values greater than 100.
@@ -110,5 +111,21 @@ public class Main {
             actualSum+=i;
         }
         System.out.println(actualSum-sum);
+    }
+
+    static void fizzBuzz(){
+        List<String> stringList=new ArrayList<>();
+        for (int i=1;i<=50;i++){
+            if (i%3==0 && i%5==0){
+                stringList.add("fizzbuzz");
+            } else if (i%3==0) {
+                stringList.add("fizz");
+            } else if (i%5==0) {
+                stringList.add("buzz");
+            } else {
+                stringList.add(String.valueOf(i));
+            }
+        }
+        System.out.println(stringList);
     }
 }
