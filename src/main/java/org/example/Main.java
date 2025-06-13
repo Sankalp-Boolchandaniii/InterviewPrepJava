@@ -14,7 +14,8 @@ public class Main {
 //        }
 //        System.out.println(secondHighest());
 //        System.out.println(noDuplicates("program"));
-        System.out.println(anagram("racecas", "carrace"));
+//        System.out.println(anagram("racecas", "carrace"));
+        sortByLength();
     }
 
 //    Given a Map<String, Integer>, print all keys that have values greater than 100.
@@ -81,6 +82,14 @@ public class Main {
             }
         }
         return Boolean.TRUE;
+    }
+
+    static void sortByLength(){
+        List<String> words = Arrays.asList(
+                "apple", "bat", "ball", "grape", "pear", "cherry", "banana", "kiwi", "melon", "orange"
+        );
+        Map<Integer, List<String>> collect = words.stream().collect(Collectors.groupingBy(String::length));
+        System.out.println(collect);
     }
 
 }
