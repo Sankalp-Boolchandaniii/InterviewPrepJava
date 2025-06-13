@@ -13,7 +13,8 @@ public class Main {
 //            System.out.println(ex.getMessage());
 //        }
 //        System.out.println(secondHighest());
-        System.out.println(noDuplicates("program"));
+//        System.out.println(noDuplicates("program"));
+        System.out.println(anagram("racecas", "carrace"));
     }
 
 //    Given a Map<String, Integer>, print all keys that have values greater than 100.
@@ -66,6 +67,20 @@ public class Main {
         }
 
         return "NO duplicates";
+    }
+
+    static Boolean anagram(String sOne, String sTwo){
+        if(sOne.length()!=sTwo.length()){
+            return Boolean.FALSE;
+        }
+        List<String> listOne = Arrays.stream(sOne.strip().split("")).sorted().toList();
+        List<String> listtwo = Arrays.stream(sTwo.strip().split("")).sorted().toList();
+        for (int i=0;i<=sOne.length()-1;i++){
+            if (!listOne.get(i).equals(listtwo.get(i))){
+                return Boolean.FALSE;
+            }
+        }
+        return Boolean.TRUE;
     }
 
 }
