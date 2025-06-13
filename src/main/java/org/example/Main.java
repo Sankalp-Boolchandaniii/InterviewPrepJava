@@ -7,13 +7,13 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
 //        System.out.println(greaterThanHundred());
-        try{
-            validateException("werio");
-        } catch (Exception ex){
-            System.out.println(ex.getMessage());
-        }
-
-        System.out.println(secondHighest());
+//        try{
+//            validateException("werio");
+//        } catch (Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+//        System.out.println(secondHighest());
+        System.out.println(noDuplicates("program"));
     }
 
 //    Given a Map<String, Integer>, print all keys that have values greater than 100.
@@ -54,4 +54,18 @@ public class Main {
         List<Integer> collect = employeeList.stream().map(Employee::getSal).sorted(Comparator.reverseOrder()).limit(2).collect(Collectors.toList());
         return collect.get(1);
     }
+
+//    Given a string, find and print the first duplicate character. If none, print "No duplicates".
+    static String noDuplicates(String str){
+        List<Character> seen=new ArrayList<>();
+        for (char c : str.toCharArray()) {
+            if (seen.contains(c)){
+                return String.valueOf(c);
+            }
+            seen.add(c);
+        }
+
+        return "NO duplicates";
+    }
+
 }
