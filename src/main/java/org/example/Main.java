@@ -16,7 +16,8 @@ public class Main {
 //        System.out.println(noDuplicates("program"));
 //        System.out.println(anagram("racecas", "carrace"));
 //        sortByLength();
-        longestWord();
+//        longestWord();
+        missigNumber(new int[]{1, 2, 4, 5, 6});
     }
 
 //    Given a Map<String, Integer>, print all keys that have values greater than 100.
@@ -101,4 +102,13 @@ public class Main {
         System.out.println(word);
     }
 
+//    Given an array of n-1 integers from 1 to n, with no duplicates, find the missing number.
+    static void missigNumber(int[] numbers){
+        int actualSum=0;
+        int sum = Arrays.stream(numbers).sum();
+        for (int i=0; i<=numbers.length+1;i++){
+            actualSum+=i;
+        }
+        System.out.println(actualSum-sum);
+    }
 }
