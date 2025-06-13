@@ -15,7 +15,8 @@ public class Main {
 //        System.out.println(secondHighest());
 //        System.out.println(noDuplicates("program"));
 //        System.out.println(anagram("racecas", "carrace"));
-        sortByLength();
+//        sortByLength();
+        longestWord();
     }
 
 //    Given a Map<String, Integer>, print all keys that have values greater than 100.
@@ -90,6 +91,14 @@ public class Main {
         );
         Map<Integer, List<String>> collect = words.stream().collect(Collectors.groupingBy(String::length));
         System.out.println(collect);
+    }
+
+    static void longestWord(){
+        List<String> words = Arrays.asList(
+                "apple", "bat", "ball", "grape", "pear", "cherry", "banana", "kiwi", "melon", "orange"
+        );
+        String word = words.stream().max(Comparator.comparingInt(String::length)).get();
+        System.out.println(word);
     }
 
 }
