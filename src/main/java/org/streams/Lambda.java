@@ -29,6 +29,7 @@ public class Lambda {
 
 }
 
+@FunctionalInterface
 interface MathOperations{
     int operate(int a, int b);
 }
