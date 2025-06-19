@@ -11,6 +11,8 @@ public class CollectorsDemo {
     // Collectors.averagingInt(), Collectors.averagingDouble() returns average of the stream
     // Collectors.groupingBy() returns data from the given stream in a grouped manner. Ex: length of strings
     // Collectors.partitioningBy() returns a stream partitioned by a condition based on true/false. Ex: length greater than 5
+    // Collectors.summingInt() returns a sum of all the integers
+    // Collectors.toMap() helps in converting a stream into a map of key and values, which can be anything we desire related to stream values
 
     public static void main(String[] args) {
 
