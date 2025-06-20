@@ -1,15 +1,13 @@
 package org.streams;
 
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Practice2 {
 
     public static void main(String[] args) {
-        q9();
+        q15();
     }
 
 
@@ -89,6 +87,74 @@ public class Practice2 {
         List<String> list = collect.entrySet().stream().filter(x -> x.getValue() == 1).map(x -> x.getKey()).toList();
         Map<Boolean, List<Map.Entry<String, Long>>> collect1 = collect.entrySet().stream().collect(Collectors.partitioningBy(x -> x.getValue() == 1));
         System.out.println(collect1);
+    }
+
+    static void q10(){
+        List<String> strings = Arrays.asList("apple", "banana", "cherry", "dragonfruit");
+        String s = strings.stream().max(Comparator.comparingInt(String::length)).get();
+        System.out.println(s);
+    }
+
+    static void q11(){
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
+        List<Integer> list = numbers.stream().collect(Collectors.partitioningBy(x -> x % 2 == 0)).get(true);
+        System.out.println(list);
+    }
+
+    static void q12(){
+        String sentence = "apple banana apple orange banana apple";
+        Map<String, Long> collect = Arrays.stream(sentence.split(" ")).collect(Collectors.groupingBy(x -> x, Collectors.counting()));
+        System.out.println(collect);
+    }
+
+    static void q13(){
+        String upper="QWERTYUIOPASDFGHJKLZXCVBNM";
+        List<String> names = Arrays.asList("John", "Alice", "Bob", "Jack");
+        List<String> list = names.stream().filter(x -> upper.contains(String.valueOf(x.charAt(0)))).toList();
+        if (list.size()!=names.size()){
+            System.out.println("false");
+        } else {
+            System.out.println("true");
+        }
+    }
+
+    static void q14(){
+        List<Integer> list1 = Arrays.asList(1, 2, 3, 4);
+        List<Integer> list2 = Arrays.asList(3, 4, 5, 6);
+        List<Integer> list = list2.stream().filter(x -> list1.contains(x)).toList();
+        System.out.println(list);
+    }
+
+    static void q15(){
+//        18. Convert List of Numbers to a Comma-Separated String
+//// Output: "1,2,3,4"
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4);
+        String collect = numbers.stream().map(x -> String.valueOf(x)).collect(Collectors.joining(","));
+        System.out.println(collect);
+    }
+
+    static void q16(){
+        String input = "stream";
+        Map<String, Long> collect = Arrays.stream(input.split("")).collect(Collectors.groupingBy(x -> x, Collectors.counting()));
+        System.out.println(collect);
+    }
+
+    static void q17(){
+        List<Integer> numbers = Arrays.asList(5, 10, 15, 20);
+        Integer collect = numbers.stream().filter(x -> x > 10).toList().stream().map(x -> x * x).toList().stream().collect(Collectors.summingInt(x -> x));
+        System.out.println(collect);
+    }
+
+    static void q18(){
+        List<Integer> numbers = Arrays.asList(3, 5, 7, 2, 8, 10, 6);
+        List<Integer> list = numbers.stream().sorted(Comparator.reverseOrder()).limit(3).toList();
+        System.out.println(list);
+    }
+
+    static void q19(){
+        List<String> emails = Arrays.asList("test@gmail.com", "admin@yahoo.com", "user@gmail.com");
+        List<String> list = emails.stream().filter(x -> x.endsWith("gmail.com")).toList();
+        System.out.println(list);
     }
 
 }
