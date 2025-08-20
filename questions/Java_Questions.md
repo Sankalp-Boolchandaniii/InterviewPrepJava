@@ -39,6 +39,6 @@
 39. What are lambda expressions in Java 8?
 
 ------------------------------------------
-
+Q.13) How does HashMap work internally?
 ![question images 13](../images/IMG_9488.HEIC)
 ![question images 13](../images/IMG_9489.HEIC)
