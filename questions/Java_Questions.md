@@ -40,5 +40,5 @@
 
 ------------------------------------------
 
-![Alt text](./images/IMG_9488.HEIC)
-![Alt text](./images/IMG_9489.HEIC)
+![question images 13](../images/IMG_9488.HEIC)
+![question images 13](../images/IMG_9489.HEIC)
