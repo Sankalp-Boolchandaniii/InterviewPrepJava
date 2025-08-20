@@ -37,3 +37,8 @@
 37. What is autoboxing and unboxing?
 38. What are generics in Java and why are they used?
 39. What are lambda expressions in Java 8?
+
+------------------------------------------
+
+![Alt text](images/IMG_9488.HEIC)
+![Alt text](images/IMG_9489.HEIC)
