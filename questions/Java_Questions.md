@@ -45,10 +45,10 @@ Q.13) How does HashMap work internally?
 
 ------------------------------------------
 Q34) How does garbage collection work in Java?
-![question images 34](../images/IMG_9495.HEIC)
+![question images 34](../images/IMG_9495.jpeg)
 ------------------------------------------
 Q38) What are generics in Java and why are they used?
-![question images 34](../images/IMG_9491.HEIC)
-![question images 34](../images/IMG_9492.HEIC)
-![question images 34](../images/IMG_9493.HEIC)
-![question images 34](../images/IMG_9494.HEIC)
+![question images 38](../images/IMG_9491.jpeg)
+![question images 38](../images/IMG_9492.jpeg)
+![question images 38](../images/IMG_9493.jpeg)
+![question images 38](../images/IMG_9494.jpeg)
