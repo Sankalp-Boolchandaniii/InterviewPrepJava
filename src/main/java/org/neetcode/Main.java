@@ -9,7 +9,9 @@ public class Main {
 //        int[] arr={1,2,3,4};
 //        System.out.println(Arrays.toString(ProductsOfArrayExceptSelf.productExceptSelfBetter(arr)));
 
-        System.out.println(ValidPalindrome.isPalindrome("0P"));
+//        System.out.println(ValidPalindrome.isPalindrome("0P"));
+
+        System.out.println(Arrays.toString(TwoIntegerSum2.twoSum(new int[]{2,7,11,15}, 3)));
     }
 
 }
