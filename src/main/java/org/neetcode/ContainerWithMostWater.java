@@ -1,5 +1,8 @@
 package org.neetcode;
 
+import org.utils.TwoPointer;
+
+@TwoPointer
 public class ContainerWithMostWater {
 
     public int maxArea(int[] heights) {
