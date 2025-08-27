@@ -11,7 +11,9 @@ public class Main {
 
 //        System.out.println(ValidPalindrome.isPalindrome("0P"));
 
-        System.out.println(Arrays.toString(TwoIntegerSum2.twoSum(new int[]{2,7,11,15}, 3)));
+//        System.out.println(Arrays.toString(TwoIntegerSum2.twoSum(new int[]{2,7,11,15}, 3)));
+
+        System.out.println(MaximumPointsYouCanObtainFromCards.maxScore(new int[]{1,2,3,4,5,6,1}, 3));
     }
 
 }
