@@ -1,8 +1,13 @@
 package org.neetcode;
 
+import org.utils.SlidingWindow;
+import org.utils.TwoPointer;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@TwoPointer
+@SlidingWindow
 public class LongestSubstringWithAtMostKDistinctCharacters {
 
     // best solution -- O(n)
