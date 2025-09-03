@@ -17,7 +17,9 @@ public class Main {
 
 //        System.out.println(LongestSubstringWithoutRepeatingCharacters.lengthOfLongestSubstring("pwwkew"));
 
-        System.out.println(MaxConsecutiveOnesIII.longestOnesBetter(new int[]{1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0}, 2));
+//        System.out.println(MaxConsecutiveOnesIII.longestOnesBetter(new int[]{1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0}, 2));
+
+        System.out.println(LongestSubstringWithAtMostKDistinctCharacters.kDistinctChar("abcddefg", 3));
 
     }
 
