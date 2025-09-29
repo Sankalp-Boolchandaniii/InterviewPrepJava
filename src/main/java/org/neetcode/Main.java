@@ -21,8 +21,10 @@ public class Main {
 
 //        System.out.println(LongestSubstringWithAtMostKDistinctCharacters.kDistinctChar("abcddefg", 3));
 
-        System.out.println(NumberOfSubstringsContainingAllThreeCharacters.numberOfSubstrings("abcabc"));
+//        System.out.println(NumberOfSubstringsContainingAllThreeCharacters.numberOfSubstrings("abcabc"));
 
+//        String[] tokens = {"10","6","9","3","+","-11","*","/","*","17","+","5","+"};
+//        System.out.println(EvaluateReversePolishNotation.evalRPN(tokens));
     }
 
 }
