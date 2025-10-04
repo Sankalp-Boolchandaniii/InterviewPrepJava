@@ -17,3 +17,4 @@ public class NumberOfSubstringsContainingAllThreeCharacters {
     }
 
 }
+// so the idea here is, we append the recently seem index of either a,b or c. If all the three are geater than 0, we increase the substring count
