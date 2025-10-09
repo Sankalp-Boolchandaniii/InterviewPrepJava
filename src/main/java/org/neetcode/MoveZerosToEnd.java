@@ -16,12 +16,15 @@ public class MoveZerosToEnd {
             // If the element at 'left' is non-zero, we swap it with the element at 'right'
             if (arr[left] != 0) {
                 // Swap elements at 'left' and 'right'
+                System.out.println("swapping "+arr[left]+" with "+arr[right]);
                 int temp = arr[left];
                 arr[left] = arr[right];
                 arr[right] = temp;
 
                 // Increment the 'right' pointer
                 right++;
+            } else {
+                System.out.println("no swapping for "+arr[left]+" with "+arr[right]);
             }
         }
     }
