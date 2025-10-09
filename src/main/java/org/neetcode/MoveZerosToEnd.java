@@ -1,5 +1,9 @@
 package org.neetcode;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class MoveZerosToEnd {
 
     // Function to move zeros to the end using two pointers
@@ -20,6 +24,22 @@ public class MoveZerosToEnd {
                 right++;
             }
         }
+    }
+
+    public static List<Integer> moveZerosSlow(int[] arr) {
+        int zeroCount=0;
+        List<Integer> lst=new ArrayList<>();
+        for (int i: arr){
+            if (i==0){
+                zeroCount++;
+            } else {
+                lst.add(i);
+            }
+        }
+        for (int i=0; i<zeroCount; i++){
+            lst.add(0);
+        }
+        return lst;
     }
 
     // Helper function to print the array
