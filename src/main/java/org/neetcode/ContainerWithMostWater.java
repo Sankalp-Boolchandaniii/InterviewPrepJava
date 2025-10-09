@@ -14,7 +14,7 @@ public class ContainerWithMostWater {
                     int ver=Math.min(heights[i], heights[j]);
                     int hor=i>j?i-j:j-i;
                     int prod=ver*hor;
-                    area=area>prod?area:prod;
+                    area=Math.max(area, prod);
                 }
             }
         }
