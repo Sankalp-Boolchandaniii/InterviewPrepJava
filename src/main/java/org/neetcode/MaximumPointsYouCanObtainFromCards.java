@@ -8,12 +8,12 @@ public class MaximumPointsYouCanObtainFromCards {
         for (int i=0;i<k;i++){
             currSum+=cardPoints[i];
         }
-        int maxSum=currSum>0?currSum:0;
+        int maxSum= Math.max(currSum, 0);
         int l=k-1;
         int r=n-1;
         for (int i=0; i<k;i++){
             currSum=currSum-cardPoints[l]+cardPoints[r];
-            maxSum=maxSum>currSum?maxSum:currSum;
+            maxSum= Math.max(maxSum, currSum);
             l--;
             r--;
         }
