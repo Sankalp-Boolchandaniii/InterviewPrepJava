@@ -11,7 +11,7 @@ public class ContainerWithMostWater {
         for (int i=0; i<len; i++){
             for (int j=0; j<len; j++){
                 if (i!=j){
-                    int ver=heights[i]>heights[j]?heights[j]:heights[i];
+                    int ver=Math.min(heights[i], heights[j]);
                     int hor=i>j?i-j:j-i;
                     int prod=ver*hor;
                     area=area>prod?area:prod;
@@ -34,10 +34,10 @@ public class ContainerWithMostWater {
         int r=n-1;
         int area=0;
         while (l<r){
-            int ver=heights[l]<heights[r]?heights[l]:heights[r];
+            int ver=Math.min(heights[l], heights[r]);
             int hor=r-l;
             int curArea=ver*hor;
-            area=area>curArea?area:curArea;
+            area=Math.max(area, curArea);
             if (heights[l]<heights[r]){
                 l++;
             } else {
