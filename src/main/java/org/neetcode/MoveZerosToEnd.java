@@ -1,3 +1,5 @@
+package org.neetcode;
+
 public class MoveZerosToEnd {
 
     // Function to move zeros to the end using two pointers
