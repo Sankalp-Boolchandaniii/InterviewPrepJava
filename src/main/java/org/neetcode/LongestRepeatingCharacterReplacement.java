@@ -1,3 +1,5 @@
+package org.neetcode;
+
 class LongestRepeatingCharacterReplacement {
   public static int characterReplacement(String s, int k) {
         int l=0, r=0, maxlen=0, maxf=0;
