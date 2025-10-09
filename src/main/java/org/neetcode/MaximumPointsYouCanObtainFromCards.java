@@ -13,7 +13,7 @@ public class MaximumPointsYouCanObtainFromCards {
         int r=n-1;
         for (int i=0; i<k;i++){
             currSum=currSum-cardPoints[l]+cardPoints[r];
-            maxSum=maxSum>currSum?maxSum:currSum;
+            maxSum= Math.max(maxSum, currSum);
             l--;
             r--;
         }
