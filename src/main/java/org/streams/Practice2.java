@@ -3,11 +3,12 @@ package org.streams;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class Practice2 {
 
     public static void main(String[] args) {
-        q15();
+        q20();
     }
 
 
@@ -154,6 +155,14 @@ public class Practice2 {
     static void q19(){
         List<String> emails = Arrays.asList("test@gmail.com", "admin@yahoo.com", "user@gmail.com");
         List<String> list = emails.stream().filter(x -> x.endsWith("gmail.com")).toList();
+        System.out.println(list);
+    }
+
+    static void q20(){
+        List<Integer> list1 = Arrays.asList(5, 2, 8, 1);
+        List<Integer> list2 = Arrays.asList(7, 3, 6, 4);
+
+        List<Integer> list = Stream.concat(list1.stream(), list2.stream()).sorted().toList();
         System.out.println(list);
     }
 
