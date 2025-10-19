@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class Practice2 {
 
     public static void main(String[] args) {
-        q20();
+        q21();
     }
 
 
@@ -164,6 +164,20 @@ public class Practice2 {
 
         List<Integer> list = Stream.concat(list1.stream(), list2.stream()).sorted().toList();
         System.out.println(list);
+    }
+
+    static void q21(){
+        Employee e1=new Employee("n1", "d1", 10000);
+        Employee e2=new Employee("n2", "d2", 20000);
+        Employee e3=new Employee("n3", "d3", 30000);
+        Employee e4=new Employee("n4", "d2", 40000);
+        Employee e5=new Employee("n5", "d1", 50000);
+        List<Employee> list=List.of(e1,e2,e3,e4,e5);
+
+        Map<String, Double> collect = list.stream().collect(Collectors.groupingBy(
+                Employee::getDepartment,
+                Collectors.averagingDouble(Employee::getSalary)));
+        System.out.println(collect);
     }
 
 }
