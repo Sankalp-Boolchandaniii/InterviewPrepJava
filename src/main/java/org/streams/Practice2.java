@@ -16,6 +16,9 @@ public class Practice2 {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
         List<Integer> integers = numbers.stream().collect(Collectors.partitioningBy(x -> x % 2 == 0)).get(true);
         System.out.println(integers);
+        // or
+        integers = numbers.stream().filter(x->x%2==0).toList();
+        System.out.println(integers);
     }
 
     static void q2(){
