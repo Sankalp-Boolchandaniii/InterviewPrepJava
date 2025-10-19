@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class Practice2 {
 
     public static void main(String[] args) {
-        q21();
+        q6();
     }
 
 
@@ -68,6 +68,11 @@ public class Practice2 {
                 Employee::getDepartment,
                 Collectors.mapping(Employee::getSalary, Collectors.reducing(Double::max))
         )).forEach((dept, sal)-> System.out.println(dept+": "+sal.get()));
+        System.out.println("-------------------------------------------------");
+        employees.stream().collect(Collectors.groupingBy(
+                Employee::getDepartment,
+                Collectors.mapping(Employee::getSalary, Collectors.reducing(Double::max))
+        )).entrySet().forEach(x->System.out.println(x.getKey()+": "+x.getValue().get()));
     }
 
     static void q7(){
