@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 public class Practice {
 
     public static void main(String[] args) {
-        q2();
+        q8();
     }
 
     static void q1(){
@@ -63,6 +63,11 @@ public class Practice {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 2, 4, 5, 1);
         Map<Integer, Long> collect = numbers.stream().collect(Collectors.groupingBy(x -> x, Collectors.counting()));
         List<Integer> list = collect.entrySet().stream().filter(x -> x.getValue() > 1).map(x -> x.getKey()).toList();
+        System.out.println(list);
+
+        list = numbers.stream().collect(Collectors.groupingBy(x -> x, Collectors.counting()))
+                .entrySet().stream().filter(x -> x.getValue() > 1)
+                .map(x -> x.getKey()).toList();
         System.out.println(list);
     }
 }
