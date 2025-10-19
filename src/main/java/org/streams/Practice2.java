@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class Practice2 {
 
     public static void main(String[] args) {
-        q6();
+        q17();
     }
 
 
@@ -150,7 +150,7 @@ public class Practice2 {
 
     static void q17(){
         List<Integer> numbers = Arrays.asList(5, 10, 15, 20);
-        Integer collect = numbers.stream().filter(x -> x > 10).toList().stream().map(x -> x * x).toList().stream().collect(Collectors.summingInt(x -> x));
+        Integer collect = numbers.stream().filter(x -> x > 10).map(x -> x * x).collect(Collectors.summingInt(x -> x));
         System.out.println(collect);
     }
 
