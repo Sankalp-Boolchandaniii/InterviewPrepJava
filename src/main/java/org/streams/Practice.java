@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 public class Practice {
 
     public static void main(String[] args) {
-        q8();
+        q2();
     }
 
     static void q1(){
@@ -25,6 +25,8 @@ public class Practice {
         List<Integer> list1 = Arrays.asList(1, 2, 3, 4, 5);
         List<Integer> list2 = Arrays.asList(3, 4, 5, 6, 7);
         List<Integer> integers = list2.stream().collect(Collectors.partitioningBy(list1::contains)).get(true);
+        System.out.println(integers);
+        integers = list2.stream().filter(list1::contains).toList();
         System.out.println(integers);
     }
 
