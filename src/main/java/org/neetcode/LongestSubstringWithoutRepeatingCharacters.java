@@ -18,7 +18,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
                 l+=1;
             }
             characterSet.add(charArray[r]);
-            maxLen=maxLen>(r-l+1)?maxLen:(r-l+1);
+            maxLen= Math.max(maxLen, (r - l + 1));
         }
         return maxLen;
     }
