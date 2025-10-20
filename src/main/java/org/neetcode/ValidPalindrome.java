@@ -21,7 +21,7 @@ public class ValidPalindrome {
         return true;
     }
 
-    static boolean isPalindromeXd(String s){
+    static boolean isPalindromeBetter(String s){
         String valid="QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
         String res="";
         for (char i: s.toCharArray()){
@@ -31,7 +31,6 @@ public class ValidPalindrome {
         }
 
         for (int i=0; i<res.length(); i++){
-            res.charAt(i);
             if (!(String.valueOf(res.charAt(i)).equals(String.valueOf(res.charAt(res.length()-1-i))))){
                 return false;
             }
@@ -40,8 +39,8 @@ public class ValidPalindrome {
     }
 
     public static void main(String[] args) {
-        System.out.println(isPalindromeXd("sankalp"));
-        System.out.println(isPalindromeXd("racecar"));
+        System.out.println(isPalindromeBetter("sankalp"));
+        System.out.println(isPalindromeBetter("racecar"));
     }
 
 }
