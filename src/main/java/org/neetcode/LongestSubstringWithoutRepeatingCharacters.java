@@ -32,7 +32,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
 
         for (int r=0;r<n;r++){
             char currentChar = s.charAt(r);
-            currentChar++;          // increase the frequency of current char
+            currentChar++;                      // increase the frequency of current char
             while(freq[currentChar]>1){         // check if the current char frequency is greater than 1, i.e. it's repeating
                 freq[s.charAt(l)]--;            // if so ----> start shrinking window of characters till all are unique again
                 l++;                            // removing the chars at left pointer and move the left pointer ahead
