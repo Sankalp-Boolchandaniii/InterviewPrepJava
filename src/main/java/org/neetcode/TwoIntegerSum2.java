@@ -6,7 +6,6 @@ import java.util.List;
 public class TwoIntegerSum2 {
 
     public static int[] twoSum(int[] numbers, int target) {
-        int[] resArr=new int[2];
         List<Integer> list = Arrays.stream(numbers).boxed().toList();
         int len=numbers.length;
         for (int i=0;i<len;i++) {
