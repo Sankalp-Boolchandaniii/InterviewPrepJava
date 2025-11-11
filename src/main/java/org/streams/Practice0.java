@@ -28,5 +28,8 @@ public class Practice0 {
     static void q2(){
         Integer max = list.stream().reduce((a, b) -> Integer.max(a, b)).get();
         System.out.println(max);
+
+        max = list.stream().max(Comparator.comparingInt(Integer::intValue)).get();
+        System.out.println(max);
     }
 }
