@@ -1,14 +1,12 @@
 package org.streamsPrac;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Practice181225 {
 
     public static void main(String[] args) {
-        q7();
+        q11();
     }
 
     static void q1(){
@@ -109,6 +107,70 @@ public class Practice181225 {
                 .collect(Collectors.toSet());
     }
 
+    static void q9(){
+        List<Order> orders = Arrays.asList(
+                new Order(1, Arrays.asList(
+                        new Item("Pen", 10),
+                        new Item("Book", 50)
+                )),
+                new Order(2, Arrays.asList(
+                        new Item("Pencil", 5),
+                        new Item("Book", 50),
+                        new Item("Bag", 500)
+                ))
+        );
+        System.out.println(
+        orders.stream().
+                flatMap(order -> order.getItems().stream()
+                        .map(Item::getName))
+                .collect(Collectors.groupingBy(x->
+                        x,
+                        Collectors.counting())));
+    }
+
+    static void q10(){
+        List<Order> orders = Arrays.asList(
+                new Order(1, Arrays.asList(
+                        new Item("Pen", 10),
+                        new Item("Book", 50)
+                )),
+                new Order(2, Arrays.asList(
+                        new Item("Pencil", 5),
+                        new Item("Book", 50),
+                        new Item("Bag", 500)
+                ))
+        );
+        String s = orders.stream()
+                .flatMap(order -> order.getItems().stream().map(Item::getName))
+                .collect(Collectors.groupingBy(x -> x, Collectors.counting()))
+                .entrySet().stream().max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey).orElse(null);
+        System.out.println(s);
+    }
+
+    static void q11(){
+        List<Customer> customers = Arrays.asList(
+                new Customer(1, Arrays.asList(
+                        new Transaction("Food", 200),
+                        new Transaction("Travel", 500)
+                )),
+                new Customer(2, Arrays.asList(
+                        new Transaction("Food", 300),
+                        new Transaction("Shopping", 1000)
+                )),
+                new Customer(3, Arrays.asList(
+                        new Transaction("Food", 200),
+                        new Transaction("Travel", 700)
+                ))
+        );
+
+        customers.stream().flatMap(customer -> customer.getTransactions().stream())
+                .collect(Collectors.groupingBy(Transaction::getCategory, Collectors.summingInt(Transaction::getAmount)))
+                .entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey).get();
+    }
+
 }
 
 
@@ -153,6 +215,22 @@ class Order {
         this.orderId = orderId;
         this.items = items;
     }
+
+    public int getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
 }
 
 class Item {
@@ -163,4 +241,74 @@ class Item {
         this.name = name;
         this.price = price;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
 }
+
+
+class Customer {
+    int id;
+    List<Transaction> transactions;
+
+    public Customer(int id, List<Transaction> transactions) {
+        this.id = id;
+        this.transactions = transactions;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+}
+
+class Transaction {
+    String category;
+    int amount;
+
+    public Transaction(String category, int amount) {
+        this.category = category;
+        this.amount = amount;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+}
+
