@@ -68,6 +68,17 @@ public class Practice181225 {
         ));
     }
 
+    static void q6(){
+        List<Employee> employees = Arrays.asList(
+                new Employee(1, "Sankalp", "IT", 80000),
+                new Employee(2, "Ravi", "HR", 50000),
+                new Employee(3, "Amit", "IT", 90000),
+                new Employee(4, "Neha", "Finance", 70000),
+                new Employee(5, "Priya", "IT", 60000)
+        );
+        employees.stream().collect(Collectors.partitioningBy(x->x.getSalary()>=70000));
+    }
+
 }
 
 
