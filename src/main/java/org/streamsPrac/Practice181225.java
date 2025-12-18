@@ -79,6 +79,16 @@ public class Practice181225 {
         employees.stream().collect(Collectors.partitioningBy(x->x.getSalary()>=70000));
     }
 
+    static void q7(){
+        List<List<Integer>> numbers = Arrays.asList(
+                Arrays.asList(1, 2, 3),
+                Arrays.asList(4, 5),
+                Arrays.asList(6, 7, 8, 9)
+        );
+        List<Integer> list = numbers.stream().flatMap(x -> x.stream().filter(y -> y % 2 == 0).map(z -> z * z)).toList();
+        System.out.println(list);
+    }
+
 }
 
 
