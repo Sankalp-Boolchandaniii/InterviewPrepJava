@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class Practice181225 {
 
     public static void main(String[] args) {
-        q4();
+        q7();
     }
 
     static void q1(){
@@ -89,6 +89,26 @@ public class Practice181225 {
         System.out.println(list);
     }
 
+    static void q8(){
+        List<Order> orders = Arrays.asList(
+                new Order(1, Arrays.asList(
+                        new Item("Pen", 10),
+                        new Item("Book", 50)
+                )),
+                new Order(2, Arrays.asList(
+                        new Item("Pencil", 5),
+                        new Item("Book", 50),
+                        new Item("Bag", 500)
+                ))
+        );
+
+        orders.stream()
+                .flatMap(orderss->orderss.items.stream()
+                                .filter(item -> item.price>=50))
+                .map(x->x.name)
+                .collect(Collectors.toSet());
+    }
+
 }
 
 
@@ -121,5 +141,26 @@ class Employee {
 
     public int getSalary() {
         return this.salary;
+    }
+}
+
+
+class Order {
+    int orderId;
+    List<Item> items;
+
+    public Order(int orderId, List<Item> items) {
+        this.orderId = orderId;
+        this.items = items;
+    }
+}
+
+class Item {
+    String name;
+    int price;
+
+    public Item(String name, int price) {
+        this.name = name;
+        this.price = price;
     }
 }
