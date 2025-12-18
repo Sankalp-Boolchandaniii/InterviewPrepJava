@@ -64,7 +64,7 @@ public class Practice181225 {
         );
         employees.stream().collect(Collectors.groupingBy(
                 Employee::getDepartment,
-                Collectors.summingInt(Employee::getSalary)
+                Collectors.mapping(Employee::getSalary, Collectors.reducing(Integer::sum))
         ));
     }
 
