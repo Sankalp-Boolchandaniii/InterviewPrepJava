@@ -23,10 +23,10 @@ public class ValidPalindrome {
 
     static boolean isPalindromeBetter(String s){
         String valid="QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
-        String res="";
+        StringBuilder res= new StringBuilder();
         for (char i: s.toCharArray()){
             if (valid.contains(String.valueOf(i))){
-                res+=String.valueOf(i);
+                res.append(i);
             }
         }
 

@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 public class Practice2 {
 
     public static void main(String[] args) {
-        q17();
+        q16();
     }
 
 
