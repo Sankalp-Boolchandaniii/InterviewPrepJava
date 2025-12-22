@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 public class Practice181225 {
 
     public static void main(String[] args) {
-        q11();
+        q12();
     }
 
     static void q1(){
@@ -169,6 +169,16 @@ public class Practice181225 {
                 .entrySet().stream()
                 .max(Map.Entry.comparingByValue())
                 .map(Map.Entry::getKey).get();
+    }
+
+    static void q12(){
+        String test="aaaabbcccaddac";
+        String s = Arrays.stream(test.split(""))
+                .collect(Collectors.groupingBy(x -> x, Collectors.counting()))
+                .entrySet().stream()
+                .sorted(Comparator.comparing(Map.Entry::getValue, Comparator.reverseOrder()))
+                .map(Map.Entry::getKey).limit(2).toList().get(1);
+        System.out.println(s);
     }
 
 }
