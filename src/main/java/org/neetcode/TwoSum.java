@@ -1,10 +1,11 @@
 package org.neetcode;
 
-import java.util.Arrays;
+import org.utils.SlidingWindow;
+
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
+@SlidingWindow
 public class TwoSum {
 
     public static int[] twoSum(int[] numbers, int target) {
