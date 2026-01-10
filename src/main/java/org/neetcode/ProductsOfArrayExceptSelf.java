@@ -38,7 +38,12 @@ public class ProductsOfArrayExceptSelf {
     public static int[] productExceptSelfBetter(int[] nums) {
         int len=nums.length;
         int[] resArr=new int[len];
-        int zeros = Integer.parseInt(String.valueOf(Arrays.stream(nums).filter(x -> x == 0).count()));
+        int zeros=0;
+        for (int i:nums){
+            if (i==0){
+                zeros++;
+            }
+        }
         if (zeros>1){
             for (int i=0;i<nums.length;i++){
                 resArr[i]=0;

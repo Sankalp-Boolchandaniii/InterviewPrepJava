@@ -1,9 +1,7 @@
 package org.neetcode;
 
-import org.utils.SlidingWindow;
 import org.utils.TwoPointer;
 
-@SlidingWindow
 @TwoPointer
 public class BestTimeToBuyAndSellStock {
 

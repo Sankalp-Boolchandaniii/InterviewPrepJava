@@ -15,7 +15,6 @@ public class MoveZerosToEnd {
         for (int left = 0; left < n; left++) {
             // If the element at 'left' is non-zero, we swap it with the element at 'right'
             if (arr[left] != 0) {
-                // Swap elements at 'left' and 'right'
                 System.out.println("swapping "+arr[left]+" with "+arr[right]);
                 int temp = arr[left];
                 arr[left] = arr[right];
