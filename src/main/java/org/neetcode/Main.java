@@ -25,10 +25,13 @@ public class Main {
 
 //        String[] tokens = {"10","6","9","3","+","-11","*","/","*","17","+","5","+"};
 //        System.out.println(EvaluateReversePolishNotation.evalRPN(tokens));
-        int[] temperaturesBetter = DailyTemperatures.dailyTemperaturesBetter(new int[]{73, 74, 75, 71, 70, 69, 76, 73});
-        for (int i:temperaturesBetter){
-            System.out.println(i);
-        }
+//        int[] temperaturesBetter = DailyTemperatures.dailyTemperaturesBetter(new int[]{73, 74, 75, 71, 70, 69, 76, 73});
+//        for (int i:temperaturesBetter){
+//            System.out.println(i);
+//        }
+
+        MissingNumber.missingNumberBetter(new int[]{1,2,3,4,5,6,7,8,9,9});
+
     }
 
 }
