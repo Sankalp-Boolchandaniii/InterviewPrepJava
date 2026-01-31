@@ -30,8 +30,8 @@ public class Main {
 //            System.out.println(i);
 //        }
 
-        MissingNumber.missingNumberBetter(new int[]{1,2,3,4,5,6,7,8,9,9});
-
+//        MissingNumber.missingNumberBetter(new int[]{1,2,3,4,5,6,7,8,9,9});
+        System.out.println(StringRotation.rotateString("abcd", "cdba"));
     }
 
 }

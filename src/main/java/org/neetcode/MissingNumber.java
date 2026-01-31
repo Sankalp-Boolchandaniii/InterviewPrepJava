@@ -29,3 +29,4 @@ public class MissingNumber {
     }
 
 }
+// main idea here is to calculate the sum and find the missing number based on the difference
