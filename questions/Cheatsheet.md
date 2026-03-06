@@ -32,122 +32,122 @@
 10. **What is the `volatile` keyword used for?**
     The `volatile` keyword ensures that the value of a variable is always read from the main memory, rather than from a thread's local CPU cache. It provides visibility guarantees across threads but does not provide atomicity for compound operations like increments.
 
-12. **What is the "Diamond Problem" and how does Java handle it?**
+11. **What is the "Diamond Problem" and how does Java handle it?**
     It occurs when a class inherits from two interfaces that both have a default method with the same signature. Java forces the developer to resolve the ambiguity by overriding the method in the implementation class.
 
-13. **Explain the difference between `final`, `finally`, and `finalize`.**
+12. **Explain the difference between `final`, `finally`, and `finalize`.**
 `final` is a modifier to make variables, methods, or classes immutable/un-inheritable; `finally` is a block used in exception handling to execute cleanup code; `finalize` is a deprecated method formerly used by the Garbage Collector.
 
-15. **How does a `HashMap` work internally?**
+13. **How does a `HashMap` work internally?**
     It uses an array of "buckets" and hashing to store key-value pairs. In modern Java, if a bucket exceeds a threshold (8 elements), it converts from a linked list to a Balanced Tree (Red-Black Tree) to improve performance from $O(n)$ to $O(\log n)$.
 ---
 
 ## Spring Boot Interview Questions
 
-11. **What is the purpose of the `@SpringBootApplication` annotation?**
+14. **What is the purpose of the `@SpringBootApplication` annotation?**
     It is a convenience annotation that combines `@Configuration`, `@EnableAutoConfiguration`, and `@ComponentScan`. This single annotation bootstraps the entire Spring Boot application and configures beans automatically based on class-path dependencies.
 
-12. **How does Spring Boot's Auto-Configuration work?**
+15. **How does Spring Boot's Auto-Configuration work?**
     Auto-configuration intelligently attempts to configure your Spring application based on the jar dependencies you have added. For example, if it detects `spring-boot-starter-web` and Tomcat on the classpath, it automatically sets up a dispatcher servlet and a web server without manual XML or Java configuration.
 
-13. **What is Dependency Injection (DI) and how does Spring implement it?**
+16. **What is Dependency Injection (DI) and how does Spring implement it?**
     DI is a design pattern where an object's dependencies are provided to it dynamically rather than the object creating them itself. Spring implements DI using an Inversion of Control (IoC) container that manages the lifecycle and wiring of beans using annotations like `@Autowired`.
 
-14. **What are Spring Boot Actuators used for?**
+17. **What are Spring Boot Actuators used for?**
     Actuators provide production-ready features to help you monitor and manage your live application. They expose HTTP endpoints to check application health, gather metrics, view environment properties, and analyze thread dumps.
 
-15. **What is the difference between `@Controller` and `@RestController`?**
+18. **What is the difference between `@Controller` and `@RestController`?**
     `@Controller` is used to mark a class as a web controller returning a view (like an HTML or JSP page). `@RestController` is a specialized version that combines `@Controller` and `@ResponseBody`, meaning it automatically serializes the returned objects into JSON or XML for RESTful APIs.
 
-16. **Explain the difference between `@Component`, `@Service`, and `@Repository`.**
+19. **Explain the difference between `@Component`, `@Service`, and `@Repository`.**
     `@Component` is a generic stereotype for any Spring-managed component. `@Service` is a specialization used at the business layer to indicate business logic, while `@Repository` is used at the persistence layer and translates database exceptions into Spring's `DataAccessException`.
 
-17. **How do you handle exceptions globally in a Spring Boot application?**
+20. **How do you handle exceptions globally in a Spring Boot application?**
     You can use the `@ControllerAdvice` or `@RestControllerAdvice` annotations on a centralized class. Within this class, you use `@ExceptionHandler` methods to intercept specific exceptions thrown by any controller and return standardized error responses to the client.
 
-18. **What are Spring Boot Profiles?**
+21. **What are Spring Boot Profiles?**
     Profiles allow developers to segregate application configuration and make certain beans or properties available only in specific environments. You can define profiles for `dev`, `test`, or `prod` in your `application.properties` and activate them via command-line arguments or environment variables.
 
-19. **How does Spring Data JPA simplify database access?**
+22. **How does Spring Data JPA simplify database access?**
     Spring Data JPA drastically reduces boilerplate code by allowing you to define repository interfaces that automatically generate database queries based on method names. It wraps JPA/Hibernate, handling entity management, transactions, and pagination automatically.
 
-20. **What is the purpose of the `@Transactional` annotation?**
+23. **What is the purpose of the `@Transactional` annotation?**
     This annotation is used to declaratively manage database transactions at the method or class level. If a method annotated with `@Transactional` completes successfully, the transaction commits; if an unchecked runtime exception is thrown, the transaction is automatically rolled back.
 
 ---
 
 ## REST APIs Interview Questions
 
-21. **What are the architectural constraints of a RESTful API?**
+24. **What are the architectural constraints of a RESTful API?**
     REST requires a client-server architecture, stateless interactions, cacheability, a uniform interface, and a layered system. These constraints ensure that the API is scalable, reliable, and easy to modify without breaking client implementations.
 
-22. **What is the difference between PUT and PATCH HTTP methods?**
+25. **What is the difference between PUT and PATCH HTTP methods?**
     `PUT` is used to completely replace an existing resource with the provided payload, requiring all fields to be sent. `PATCH` is used to apply partial modifications to a resource, updating only the specific fields provided in the request body.
 
-23. **Explain the concept of Idempotency in REST APIs.**
+26. **Explain the concept of Idempotency in REST APIs.**
     An API endpoint is idempotent if making multiple identical requests has the same effect on the server state as making a single request. `GET`, `PUT`, and `DELETE` are idempotent, whereas `POST` is not, since multiple requests would create multiple duplicate resources.
 
-24. **How do you secure a REST API?**
+27. **How do you secure a REST API?**
     REST APIs are typically secured using HTTPS to encrypt data in transit and authentication mechanisms like OAuth2 or JWT (JSON Web Tokens). Additionally, proper input validation, rate limiting, and CORS configuration are implemented to prevent common web vulnerabilities.
 
-25. **What is the significance of HTTP Status Codes?**
+28. **What is the significance of HTTP Status Codes?**
     Status codes communicate the result of a client's request to the server. Common categories include 2xx for success (e.g., 200 OK), 4xx for client errors (e.g., 404 Not Found, 400 Bad Request), and 5xx for server-side errors (e.g., 500 Internal Server Error).
 
-27. **Explain JWT (JSON Web Token) authentication.**
+29. **Explain JWT (JSON Web Token) authentication.**
     JWT is a stateless way of handling authentication where the server sends a signed token to the client after login. The client includes this token in the header of subsequent requests, allowing the server to verify the user without storing session data.
 
 ---
 
 ## Microservices & Cloud Interview Questions
 
-26. **What is an API Gateway in a microservices architecture?**
+30. **What is an API Gateway in a microservices architecture?**
     An API Gateway acts as a single entry point for all client requests, routing them to the appropriate backend microservices. It often handles cross-cutting concerns like authentication, rate limiting, SSL termination, and request aggregation.
 
-27. **Explain the Circuit Breaker pattern.**
+31. **Explain the Circuit Breaker pattern.**
     The Circuit Breaker pattern prevents a system from repeatedly trying to execute an operation that is likely to fail, such as calling a down microservice. If failures reach a certain threshold, the circuit "trips" and fast-fails subsequent requests, giving the failing service time to recover.
 
-28. **How do microservices communicate with each other?**
+32. **How do microservices communicate with each other?**
     Microservices can communicate synchronously using HTTP/REST or gRPC APIs. They can also communicate asynchronously using message brokers like Kafka or RabbitMQ, which helps decouple services and improve system resilience.
 
-29. **What is Service Discovery?**
+33. **What is Service Discovery?**
     In a dynamic cloud environment, the IP addresses of microservice instances change constantly due to scaling or failures. Service discovery (using tools like Netflix Eureka or Consul) allows services to dynamically find and route requests to each other without hardcoded network addresses.
 
-30. **What is the Saga Pattern in distributed transactions?**
+34. **What is the Saga Pattern in distributed transactions?**
     The Saga pattern manages distributed transactions by breaking them down into a sequence of local transactions coordinated across multiple microservices. If one step fails, the Saga executes compensating transactions to undo the database changes made by the preceding successful steps.
 
 ---
 
 ## Other Backend Fundamentals
 
-31. **What are ACID properties in a database?**
+35. **What are ACID properties in a database?**
     ACID stands for Atomicity, Consistency, Isolation, and Durability, which ensure reliable processing of database transactions. These properties guarantee that transactions are processed entirely or not at all, maintaining data integrity even in the event of system failures.
 
-32. **What is a database index and how does it improve performance?**
+36. **What is a database index and how does it improve performance?**
     An index is a data structure (often a B-Tree) that improves the speed of data retrieval operations on a database table at the cost of additional storage and slower writes. It allows the database engine to locate the requested rows instantly without scanning the entire table.
 
-33. **Explain the difference between SQL and NoSQL databases.**
+37. **Explain the difference between SQL and NoSQL databases.**
     SQL databases are relational, strictly structured with schemas, and scale vertically, making them ideal for complex queries and transactional consistency. NoSQL databases are non-relational, document- or key-value-based, schema-less, and scale horizontally, fitting well for rapid development and highly unstructured data.
 
-34. **Why would you use Apache Kafka over a traditional message queue like RabbitMQ?**
+38. **Why would you use Apache Kafka over a traditional message queue like RabbitMQ?**
     Kafka is a distributed streaming platform designed for high-throughput, replayable, and persistent event streaming. While RabbitMQ excels at complex routing and traditional pub/sub queuing, Kafka is better suited for event sourcing, log aggregation, and handling massive real-time data pipelines.
 
-35. **What is Redis and how is it used in backend development?**
+39. **What is Redis and how is it used in backend development?**
     Redis is an in-memory, key-value data store known for its extremely fast read and write speeds. It is heavily used in backend development for caching frequently accessed database queries, managing distributed user sessions, and implementing rate limiters.
 
-36. **What is the N+1 query problem and how do you solve it in Hibernate?**
+40. **What is the N+1 query problem and how do you solve it in Hibernate?**
     The N+1 problem occurs when an ORM framework executes one query to fetch a list of entities and then 'N' additional queries to fetch their related associations. You can solve it by using `JOIN FETCH` in your JPQL queries or configuring `EntityGraphs` to load associations eagerly in a single query.
 
-37. **What is the role of Docker in backend development?**
+41. **What is the role of Docker in backend development?**
     Docker packages an application and its dependencies into a standardized, isolated unit called a container. This ensures that the application runs identically across multiple environments (development, testing, production), eliminating the classic "it works on my machine" problem.
 
-38. **Explain the concept of Rate Limiting.**
+42. **Explain the concept of Rate Limiting.**
     Rate limiting restricts the number of requests a user or client can make to an API within a specified time window. It protects backend services from being overwhelmed by traffic spikes, brute-force attacks, or Denial of Service (DoS) attacks.
 
-39. **What is OAuth2 and how does the authorization code flow work?**
+43. **What is OAuth2 and how does the authorization code flow work?**
     OAuth2 is an industry-standard protocol for authorization, allowing third-party applications to access user resources without exposing passwords. The authorization code flow redirects the user to an auth server to log in, returns a short-lived code to the client, and exchanges that code for an access token securely via the backend.
 
-40. **How do you ensure data security in transit and at rest?**
+44. **How do you ensure data security in transit and at rest?**
     Data in transit is secured by enforcing TLS/HTTPS protocols to encrypt communications between the client and server over the network. Data at rest is protected by encrypting database storage volumes, using strong hashing algorithms (like bcrypt) for passwords, and securing sensitive keys in vault systems.
 
-41. **What is the "CAP Theorem"?**
+45. **What is the "CAP Theorem"?**
     It states that a distributed system can only provide two out of three guarantees: Consistency, Availability, and Partition Tolerance. In the event of a network partition, you must choose between keeping the system available or keeping the data consistent.
