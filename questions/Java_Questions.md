@@ -40,8 +40,8 @@
 
 ------------------------------------------
 Q.13) How does HashMap work internally?
-![question images 13](../images/IMG_9488.HEIC)
-![question images 13](../images/IMG_9489.HEIC)
+![question images 13](../images/IMG_9488.jpg)
+![question images 13](../images/IMG_9489.jpg)
 
 ------------------------------------------
 Q34) How does garbage collection work in Java?
