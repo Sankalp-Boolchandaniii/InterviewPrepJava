@@ -55,4 +55,18 @@ public class FruitIntoBaskets {
         return maxlen;
     }
 
+    /**
+     * Summary:
+     * 
+     * Problem: Find longest subarray containing at most 2 distinct elements
+     * Approach: Sliding window with hash map tracking
+     * 
+     * Key Insights:
+     * - Window expands with right pointer, contracts when > 2 types
+     * - Hash map maintains fruit counts for O(1) operations
+     * - Both methods achieve same result with different control flow
+     * 
+     * Time Complexity: O(n) - linear scan
+     * Space Complexity: O(1) - bounded by 2 fruit types
+     */
 }

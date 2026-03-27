@@ -4,9 +4,48 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class LongestSubstringWithoutRepeatingCharacters {
+/**
+ * Longest Substring Without Repeating Characters
+ * 
+ * Problem: Given a string s, find the length of the longest substring without repeating characters.
+ * 
+ * Example:
+ * Input: "abcabcbb"
+ * Output: 3 (Explanation: The answer is "abc", with the length of 3)
+ * 
+ * Input: "bbbbb"
+ * Output: 1 (Explanation: The answer is "b", with the length of 1)
+ * 
+ * Input: "pwwkew"
+ * Output: 3 (Explanation: The answer is "wke", with the length of 3)
+ * 
+ * Approach: Sliding Window Algorithm
+ * - Maintain a window [l, r] of unique characters
+ * - Expand window by moving right pointer
+ * - When duplicate found, shrink window from left until all characters are unique
+ * - Track maximum window size encountered
+ * 
+ * Time Complexity: O(n) - each character visited at most twice
+ * Space Complexity: O(min(n, m)) where m is character set size (128 for ASCII)
+ */
 
-    public static int lengthOfLongestSubstring(String s) {
+    public class LongestSubstringWithoutRepeatingCharacters {
+
+    /**
+     * Implementation 1: HashSet Sliding Window Approach (Recommended)
+     * 
+     * Algorithm:
+     * 1. Use HashSet to store characters in current window
+     * 2. Expand window by moving right pointer (r)
+     * 3. If character at r already exists in set:
+     *    - Remove characters from left until duplicate is removed
+     *    - Move left pointer (l) forward
+     * 4. Add current character to set and update max length
+     * 
+     * @param s Input string
+     * @return Length of longest substring without repeating characters
+     */
+        public static int lengthOfLongestSubstring(String s) {
         int maxLen=0;
         int l=0;
         char[] charArray = s.toCharArray();
