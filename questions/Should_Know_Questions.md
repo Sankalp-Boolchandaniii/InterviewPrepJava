@@ -211,6 +211,10 @@ WHERE salary < (SELECT MAX(salary) FROM employees);
 - **GROUP BY vs ORDER BY**: GROUP BY aggregates, ORDER BY sorts.
 - **Securing Spring Boot**: Use Spring Security, JWT/OAuth2, CSRF protection.
 
+### Q38. Fail Fast & Fail Safe
+- Fail-Fast is about immediate alerting and stopping (high consistency).
+- Fail-Safe is about continued operation via alternatives (high availability)
+
 ### Q: Stream expression to print square of even numbers
 ```java
 list.stream()
