@@ -11,7 +11,7 @@ public class ReverseLinkedList {
             prev=curr;
             curr=temp;
         }
-        return prev;
+        return prev;        // why return prev?? because it points to current so that will be the last active node
     }
 
 }
