@@ -191,6 +191,10 @@ WHERE salary < (SELECT MAX(salary) FROM employees);
 - Ordering per partition.
 - Guarantees: at-most-once, at-least-once, exactly-once (via configs).
 
+### Q38. Fail Fast & Fail Safe
+- Fail-Fast is about immediate alerting and stopping (high consistency).
+- Fail-Safe is about continued operation via alternatives (high availability)
+
 ## Miscellaneous Spring & Java
 
 - **Circuit Breaker**: Stops repeated failing calls.
