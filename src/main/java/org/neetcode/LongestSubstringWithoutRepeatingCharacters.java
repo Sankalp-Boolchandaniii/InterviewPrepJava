@@ -81,11 +81,8 @@ import java.util.Set;
 
         return maxLen;
     }
-}
 
-
-class Practice{
-    public int lengthOfLongestSubstring(String s) {
+    public int lengthOfLongestSubstringPractice(String s) {
         int maxlen=0, l=0, n=s.length();
         Set<Character> set=new HashSet<>();
         for (int r=0; r<n; r++){
