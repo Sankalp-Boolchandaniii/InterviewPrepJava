@@ -3,7 +3,8 @@ package org.neetcode;
 public class Sorting {
 
     public static void main(String[] args) {
-        bubbleSort(new int[]{5,3,4,2,1});
+//        bubbleSort(new int[]{5,3,4,2,1});
+        selectionSort(new int[]{5,3,4,2,1});
     }
 
     static void bubbleSort(int[] arr){
@@ -23,5 +24,24 @@ public class Sorting {
         for (int i:arr)
             System.out.println(i);
     }
+
+    static void selectionSort(int[] arr){
+        int n=arr.length;
+        for (int i=0;i<n-1;i++){
+            int smallestIdx=i;
+            for (int j=i+1;j<n;j++){
+                if (arr[j]<arr[smallestIdx]){
+                    smallestIdx=j;
+                }
+            }
+            int temp=arr[smallestIdx];
+            arr[smallestIdx]=arr[i];
+            arr[i]=temp;
+        }
+        for (int i:arr){
+            System.out.println(i);
+        }
+    }
+
 
 }
