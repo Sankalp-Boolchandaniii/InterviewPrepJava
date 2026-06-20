@@ -1,5 +1,7 @@
 package org.neetcode;
 
+import org.utils.ListNode;
+
 public class ReverseLinkedList {
 
     public ListNode reverseList(ListNode head) {
@@ -15,14 +17,3 @@ public class ReverseLinkedList {
     }
 
 }
-
-
-
-// Definition for singly-linked list.
-class ListNode {
-     int val;
-     ListNode next;
-     ListNode() {}
-     ListNode(int val) { this.val = val; }
-     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- }
