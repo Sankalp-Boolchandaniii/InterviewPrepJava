@@ -118,6 +118,14 @@
     * **Eager Loading:** Associations are fetched immediately. Can cause performance issues with large graphs.
 * **What is the N+1 query problem and how do you solve it?**
   It occurs when fetching parent entities triggers one query for the parents, plus 'N' additional queries for each child collection (e.g., 100 users = 1 user query + 100 address queries). Solve it by using `JOIN FETCH` in JPQL, configuring `EntityGraphs` to load eagerly in one query, or using batch fetching.
+  ```sql
+  SELECT a FROM Author a JOIN FETCH a.books b;
+  ```
+    ```sql
+  SELECT a.id, a.name, b.id, b.title, b.author_id 
+  FROM author a
+  INNER JOIN book b ON a.id = b.author_id;
+  ```
 * **What are ACID properties?**
   Atomicity, Consistency, Isolation, and Durability. They ensure reliable transaction processing and data integrity during system failures.
 * **Database Indexes (Clustered vs. Non-Clustered):**
