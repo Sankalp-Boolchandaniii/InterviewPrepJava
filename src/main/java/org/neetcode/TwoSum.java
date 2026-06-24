@@ -3,7 +3,9 @@ package org.neetcode;
 import org.utils.SlidingWindow;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 @SlidingWindow
 public class TwoSum {
@@ -20,6 +22,17 @@ public class TwoSum {
         return new int[]{};
     }
 
+    public static int[] twoSumSet(int[] nums, int target) {
+        Set<Integer> set=new HashSet<>();
+        for (int i: nums){
+            int diff=target-i;
+            if (set.contains(diff)){
+                return new int[]{i, diff};
+            }
+            set.add(i);
+        }
+        return new int[2];
+    }
 
     public static int[] twoSumPrac(int[] nums, int target) {
         Map<Integer, Integer> map=new HashMap<>();
